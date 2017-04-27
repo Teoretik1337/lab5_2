@@ -36,7 +36,6 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
 
-	//deque<long>::iterator it;
 	deque<long> deque1;
 	deque<long> deque2;
 	deque<long> deque3;
@@ -49,9 +48,12 @@ int main()
 		deque1.push_back(rand() % 20); // добавл€ем в дек новые элементы
 	}
 	
-	cout << "\n—генерированный дек: ";
+	cout << "\n—генерированный дек 1: ";
 	copy(deque1.begin(), deque1.end(), ostream_iterator<long>(cout, " ")); // вывод на экран элементов дека
-	
+	std::sort(deque1.begin(), deque1.end(), std::greater<long>());			// по убыванию
+	cout << "\nќтсортированный по убыванию дек 1: ";
+	copy(deque1.begin(), deque1.end(), ostream_iterator<long>(cout, " ")); // вывод на экран элементов дека
+	system("Pause");
 
 	/*for (auto it = deque1.rbegin(); it != deque1.rend(); ++it) // сортировка
 	{
